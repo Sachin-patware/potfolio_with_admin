@@ -1,0 +1,23 @@
+# Allow Googlebot full access
+User-agent: Googlebot
+Allow: /
+
+# Allow Bingbot full access
+User-agent: Bingbot
+Allow: /
+
+# Allow Twitterbot (for Twitter Card previews)
+User-agent: Twitterbot
+Allow: /
+
+# Allow Facebook crawler (for OG previews)
+User-agent: facebookexternalhit
+Allow: /
+
+# Allow all other bots
+User-agent: *
+Allow: /
+Disallow: /admin
+
+# Sitemap location
+Sitemap: https://sachinpatware.me/sitemap.xml
