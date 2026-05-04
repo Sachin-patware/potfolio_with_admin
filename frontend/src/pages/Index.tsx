@@ -28,11 +28,11 @@ const Index = () => {
       <HeroSection />
       <AboutSection />
       <EducationSection />
-      <ResumeSection />
       {portfolio.experience.items.length > 0 ? <ExperienceSection /> : null}
       <ProjectsSection />
       <SkillsSection />
       <ContactSection />
+      <ResumeSection />
       <Footer />
     </div>
   );

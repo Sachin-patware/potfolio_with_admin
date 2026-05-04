@@ -4,7 +4,7 @@ import type { PortfolioData } from "@/types/portfolio";
 const STORAGE_KEY = "sachin-portfolio-data";
 const ADMIN_KEY = "sachin-portfolio-admin";
 const ADMIN_TOKEN_KEY = "sachin-portfolio-admin-token";
-const NAV_ORDER = ["Home", "About", "Education", "Resume", "Experience", "Projects", "Skills", "Contact"];
+const NAV_ORDER = ["Home", "About", "Education", "Experience", "Projects", "Skills", "Contact", "Resume"];
 
 function isBrowser() {
   return typeof window !== "undefined";

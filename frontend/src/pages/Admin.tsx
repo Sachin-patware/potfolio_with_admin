@@ -484,6 +484,7 @@ const Admin = () => {
             <TabsTrigger value="projects">Projects</TabsTrigger>
             <TabsTrigger value="experience">Experience</TabsTrigger>
             <TabsTrigger value="education">Education</TabsTrigger>
+            <TabsTrigger value="resume">Resume</TabsTrigger>
             <TabsTrigger value="social">Social</TabsTrigger>
           </TabsList>
 
@@ -1387,6 +1388,82 @@ const Admin = () => {
                 ))}
               </div>
             </div>
+          </TabsContent>
+
+          <TabsContent value="resume" className="space-y-4">
+            <div className="flex flex-col gap-3 rounded-3xl bg-white p-6 shadow-card md:flex-row md:items-center md:justify-between">
+              <div>
+                <h2 className="text-2xl font-bold text-dark-text">Resume</h2>
+                <p className="text-sm text-dark-text/70">
+                  Set the PDF path and the labels used for preview and download.
+                </p>
+              </div>
+              <Button
+                type="button"
+                variant="outline"
+                className="gap-2 border-warm-brown text-warm-brown hover:bg-warm-brown/5"
+                onClick={() => {
+                  updateDraft(setDraft, "resume.fileUrl", "/resume.pdf");
+                  toast.success("Resume path reset");
+                }}
+              >
+                <RefreshCw className="h-4 w-4" />
+                Reset path
+              </Button>
+            </div>
+
+            <Card className="p-6 shadow-card">
+              <div className="grid gap-4 md:grid-cols-2">
+                <Field label="Section title">
+                  <Input
+                    value={draft.resume.title}
+                    onChange={(event) =>
+                      updateDraft(setDraft, "resume.title", event.target.value)
+                    }
+                  />
+                </Field>
+                <Field label="Section subtitle">
+                  <Input
+                    value={draft.resume.subtitle}
+                    onChange={(event) =>
+                      updateDraft(setDraft, "resume.subtitle", event.target.value)
+                    }
+                  />
+                </Field>
+                <Field label="Resume file path">
+                  <Input
+                    value={draft.resume.fileUrl}
+                    onChange={(event) =>
+                      updateDraft(setDraft, "resume.fileUrl", event.target.value)
+                    }
+                    placeholder="/resume.pdf"
+                  />
+                </Field>
+                <Field label="File name">
+                  <Input
+                    value={draft.resume.fileName}
+                    onChange={(event) =>
+                      updateDraft(setDraft, "resume.fileName", event.target.value)
+                    }
+                    placeholder="Sachin_Patware_Resume.pdf"
+                  />
+                </Field>
+                <Field label="Description" className="md:col-span-2">
+                  <Textarea
+                    rows={4}
+                    value={draft.resume.description}
+                    onChange={(event) =>
+                      updateDraft(setDraft, "resume.description", event.target.value)
+                    }
+                  />
+                </Field>
+              </div>
+
+              <div className="mt-4 rounded-2xl bg-muted/30 p-4 text-sm text-dark-text/70">
+                Tip: put your PDF in <span className="font-semibold">frontend/public/resume.pdf</span> and
+                use <span className="font-semibold">/resume.pdf</span> as the path.
+              </div>
+            </Card>
           </TabsContent>
 
           <TabsContent value="social" className="space-y-4">

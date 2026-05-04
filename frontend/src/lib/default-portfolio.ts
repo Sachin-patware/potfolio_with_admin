@@ -13,11 +13,11 @@ export const defaultPortfolio: PortfolioData = {
     { label: "Home", href: "#home" },
     { label: "About", href: "#about" },
     { label: "Education", href: "#education" },
-    { label: "Resume", href: "#resume" },
     { label: "Experience", href: "#experience" },
     { label: "Projects", href: "#projects" },
     { label: "Skills", href: "#skills" },
     { label: "Contact", href: "#contact" },
+    { label: "Resume", href: "#resume" },
   ],
   hero: {
     name: "Sachin",

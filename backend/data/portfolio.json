@@ -40,6 +40,10 @@
     {
       "label": "Contact",
       "href": "#contact"
+    },
+    {
+      "label": "Resume",
+      "href": "#resume"
     }
   ],
   "hero": {
@@ -285,6 +289,13 @@
         ]
       }
     ]
+  },
+  "resume": {
+    "title": "Resume",
+    "subtitle": "Preview or download my latest resume in one click.",
+    "description": "",
+    "fileUrl": "/resume.pdf",
+    "fileName": "Sachin_Patware_Resume.pdf"
   },
   "contact": {
     "title": "Get In Touch",
