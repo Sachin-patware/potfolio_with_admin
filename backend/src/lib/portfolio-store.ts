@@ -1,10 +1,11 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { env } from "./env.js";
 
 const defaultStorePath = path.resolve(process.cwd(), "data", "portfolio.json");
 
 function getStorePath() {
-  const configuredPath = process.env.PORTFOLIO_STORE_PATH?.trim();
+  const configuredPath = env.PORTFOLIO_STORE_PATH?.trim();
   return configuredPath ? path.resolve(configuredPath) : defaultStorePath;
 }
 

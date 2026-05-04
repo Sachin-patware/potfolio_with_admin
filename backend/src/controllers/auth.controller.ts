@@ -1,4 +1,5 @@
 import type { Request, Response } from "express";
+import { env } from "../lib/env.js";
 import { signToken } from "../utils/jwt.js";
 
 export async function login(request: Request, response: Response) {
@@ -9,11 +10,9 @@ export async function login(request: Request, response: Response) {
   };
 
   const loginId = email ?? username;
-  const configuredUsername = (
-    process.env.ADMIN_USERNAME ?? process.env.ADMIN_EMAIL ?? ""
-  ).trim();
-  const configuredPassword = process.env.ADMIN_PASSWORD ?? "";
-  const configuredName = process.env.ADMIN_NAME?.trim() || "Admin";
+  const configuredUsername = env.ADMIN_USERNAME;
+  const configuredPassword = env.ADMIN_PASSWORD;
+  const configuredName = env.ADMIN_NAME;
 
   if (!loginId || !password) {
     return response.status(400).json({ message: "Email/username and password are required" });
@@ -38,7 +37,7 @@ export async function login(request: Request, response: Response) {
       email: configuredUsername,
       role: "admin",
     },
-    process.env.JWT_SECRET ?? "replace-me",
+    env.JWT_SECRET,
     "1d",
   );
 

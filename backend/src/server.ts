@@ -1,7 +1,8 @@
 import "dotenv/config";
 import app from "./app.js";
+import { env } from "./lib/env.js";
 
-const port = Number(process.env.PORT ?? 4000);
+const port = env.PORT;
 
 app.listen(port, () => {
   console.log(`Portfolio API running on http://localhost:${port}`);

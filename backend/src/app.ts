@@ -2,12 +2,23 @@ import express from "express";
 import cors from "cors";
 import authRoutes from "./routes/auth.routes.js";
 import portfolioRoutes from "./routes/portfolio.routes.js";
+import { env } from "./lib/env.js";
 
 const app = express();
+const allowedOrigins = env.CLIENT_ORIGIN.split(",")
+  .map((origin) => origin.trim())
+  .filter(Boolean);
 
 app.use(
   cors({
-    origin: process.env.CLIENT_ORIGIN ?? "http://localhost:5173",
+    origin(origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+        return;
+      }
+
+      callback(new Error("CORS origin not allowed"));
+    },
     credentials: true,
   })
 );
