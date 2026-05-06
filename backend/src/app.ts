@@ -2,25 +2,25 @@ import express from "express";
 import cors from "cors";
 import authRoutes from "./routes/auth.routes.js";
 import portfolioRoutes from "./routes/portfolio.routes.js";
-import { env } from "./lib/env.js";
 
 const app = express();
-const allowedOrigins = env.CLIENT_ORIGIN.split(",")
-  .map((origin) => origin.trim())
-  .filter(Boolean);
-
+const allowedOrigins = [
+  "http://localhost:8080",
+  "https://sachinpatware.me",
+  "https://www.sachinpatware.me",
+  "https://sachin-patware.netlify.app",
+]; 
 app.use(
   cors({
-    origin(origin, callback) {
+    origin: function (origin, callback) {
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
-        return;
+      } else {
+        callback(new Error("Not allowed by CORS"));
       }
-
-      callback(new Error("CORS origin not allowed"));
     },
     credentials: true,
-  })
+  }),
 );
 app.use(express.json({ limit: "10mb" }));
 
