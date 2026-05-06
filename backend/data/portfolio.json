@@ -49,11 +49,7 @@
   "hero": {
     "name": "Sachin",
     "highlight": "Patware",
-    "roles": [
-      "Software Developer",
-      "Problem Solver",
-      "Full Stack Builder"
-    ],
+    "roles": ["Software Developer", "Problem Solver", "Full Stack Builder"],
     "image": "/profile-photo.jpg",
     "ctaLabel": "Reach Out",
     "ctaHref": "#contact"
@@ -66,11 +62,7 @@
       "I enjoy building practical products with a strong focus on clean architecture, user experience, and performance.",
       "I’m currently seeking internship opportunities to apply my skills, learn from experienced professionals, and contribute to innovative tech projects that create real impact."
     ],
-    "badges": [
-      "3rd Year Student",
-      "Indore, M.P.",
-      "CSE - Data Science"
-    ]
+    "badges": ["3rd Year Student", "Indore, M.P.", "CSE - Data Science"]
   },
   "skills": {
     "title": "My Skills",
@@ -284,9 +276,7 @@
         "title": "AWS cloud practitioner",
         "date": "14-mar-2026",
         "organization": "AWS",
-        "description": [
-          ""
-        ]
+        "description": [""]
       }
     ]
   },
@@ -300,7 +290,7 @@
   "contact": {
     "title": "Get In Touch",
     "subtitle": "Send me an email through the form below, or reach out via social links.",
-    "email": "sachinpatware10@gmail.co",
+    "email": "sachinpatware10@gmail.com",
     "phone": "+91 7974390787",
     "location": "Indore, MP, India",
     "formEnabled": true
